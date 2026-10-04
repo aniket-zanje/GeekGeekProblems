@@ -20,9 +20,90 @@ The problem can be found at the following link: [Question Link](https://www.geek
 - **Expected Time Complexity:** O(n)
 - **Expected Auxiliary Space Complexity:** O(n)
 
-### Accepted Solutions (1)
+### Accepted Solutions (2)
 
 #### Solution 1 (C++)
+
+- **Submitted:** 2026-10-04 15:20:52
+- **Status:** Correct
+- **Marks:** 0
+
+```cpp
+class Solution {
+  public:
+    void segregateElements(vector<int>& arr) {
+        // code here
+        vector<int> p;
+        vector<int> n;
+        
+        for(int i : arr){
+            if(i>=0){
+                p.push_back(i);
+            }else{
+                n.push_back(i);
+            }
+        }
+        
+        arr.clear();
+        
+        for(int i : p){
+            arr.push_back(i);
+        }
+        for(int i : n){
+            arr.push_back(i);
+        }
+        
+    }
+};
+
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// // Function to move all -ve element to end of array
+// // in same order.
+// void segregateElements(vector<int> &arr)
+// {
+//     int n = arr.size();
+
+//     // Create an empty array to store result
+//     vector<int> temp(n);
+//     int idx = 0;
+
+//     // First fill non-negative elements into the
+//     // temporary array
+//     for (int i = 0; i < n; i++)
+//     {
+//         if (arr[i] >= 0)
+//             temp[idx++] = arr[i];
+//     }
+
+//     // Now fill negative elements into the
+//     // temporary array
+//     for (int i = 0; i < n; i++)
+//     {
+//         if (arr[i] < 0)
+//             temp[idx++] = arr[i];
+//     }
+
+//     // copy the elements from temp to arr
+//     arr = temp;
+// }
+
+// int main()
+// {
+//     vector<int> arr = {1, -1, -3, -2, 7, 5, 11, 6};
+//     segregateElements(arr);
+
+//     for (int i = 0; i < arr.size(); i++)
+//         cout << arr[i] << " ";
+
+//     return 0;
+// }
+```
+
+#### Solution 2 (C++)
 
 - **Submitted:** 2026-10-04 15:17:20
 - **Status:** Correct
@@ -57,4 +138,4 @@ class Solution {
 };
 ```
 
-*Generated on: 10/4/2026, 3:20:11 PM*
+*Generated on: 10/4/2026, 3:21:51 PM*
