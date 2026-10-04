@@ -4,37 +4,47 @@ The problem can be found at the following link: [Question Link](https://www.geek
 
 ### Problem Description
 
-**Task:** You are given an array arr of positive integers. Your task is to find all the leaders in the array. An element is considered a leader if it is greater than or equal to all elements to its right. The rightmost element is always a leader.Examples:Input: arr = [16, 17, 4, 3, 5, 2]
-
-#### Examples
-
-##### Example 1
-
-- **Output:**
-```text
-[17, 5, 2]
-```
-- **Explanation:** Note that there is nothing greater on the right side of 17, 5 and, 2.
-
-##### Example 2
-
-- **Input:**
-```text
-arr = [10, 4, 2, 4, 1]
-```
-- **Output:**
-```text
-[10, 4, 4, 1]Explanation: Note that both of the 4s are in output, as to be a leader an equal element is also allowed on the right. sideInput: arr = [5, 10, 20, 40]Output: [40]Explanation: When an array is sorted in increasing order, only the rightmost element is leader.Input: arr = [30, 10, 10, 5]Output: [30, 10, 10, 5]Explanation: When an array is sorted in non-increasing order, all elements are leaders.
-```
+**Task:** My SubmissionsRefresh Time (IST)StatusMarksLangTest CasesCode2026-10-04 15:03:56Correct0cpp1111 / 1111View2026-10-04 15:03:42Wrong0cpp2 / 1111View2026-10-04 15:02:36Compilation Error0cpp0 / 1111View2026-10-04 15:02:32Compilation Error0cpp0 / 1111View2026-10-04 14:58:25Correct2cpp1111 / 1111ViewDiscussions ( Threads )Most Recent💡Discussion Guidelines×Please avoid posting complete solutions or full code in the comments.Ask questions, share hints, discuss approaches, or report any issues. Let's help everyone learn together.
 
 ### Time and Auxiliary Space Complexity
 
-- **Expected Time Complexity:** O(n)
-- **Expected Auxiliary Space Complexity:** O(1)
+- **Expected Time Complexity:** Not found
+- **Expected Auxiliary Space Complexity:** Not found
 
-### Accepted Solutions (1)
+### Accepted Solutions (2)
 
 #### Solution 1 (C++)
+
+- **Submitted:** 2026-10-04 15:03:56
+- **Status:** Correct
+- **Marks:** 0
+
+```cpp
+class Solution {
+  public:
+    vector<int> leaders(vector<int>& arr) {
+        // code here
+        vector<int> res;
+        int largest = INT_MIN;
+        
+        for(int i = arr.size()-1; i>=0;i--){
+            
+            if(largest <= arr[i]){
+                // res.insert(res.begin(),arr[i]);
+                res.push_back(arr[i]);
+                
+            }
+            largest = max(largest , arr[i]);
+        }
+        
+        // return res;
+        reverse(res.begin(), res.end());
+        return res;
+    }
+};
+```
+
+#### Solution 2 (C++)
 
 - **Submitted:** 2026-10-04 14:58:25
 - **Status:** Correct
@@ -62,4 +72,4 @@ class Solution {
 };
 ```
 
-*Generated on: 10/4/2026, 2:59:39 PM*
+*Generated on: 10/4/2026, 3:04:30 PM*
