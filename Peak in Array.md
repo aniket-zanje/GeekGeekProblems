@@ -21,9 +21,39 @@ true
 - **Expected Time Complexity:** O(log n)
 - **Expected Auxiliary Space Complexity:** O(1)
 
-### Accepted Solutions (2)
+### Accepted Solutions (3)
 
 #### Solution 1 (C++)
+
+- **Submitted:** 2026-11-19 08:27:42
+- **Status:** Correct
+- **Marks:** 0
+
+```cpp
+class Solution {
+  public:
+    int peakElement(vector<int> &arr) {
+        // code here
+        int low = 0;
+        int high = arr.size()-1;
+        int mid = (low + high) / 2;
+        
+        while(low < high){
+            if(arr[mid] < arr[mid+1]){
+                low = mid+1;
+            }else{
+                high = mid-1;
+            }
+            if(arr[mid] > arr[mid-1] && arr[mid] > arr[mid+1]){
+                return mid;
+            }
+            mid = ( high + low ) / 2;
+        }
+    }
+};
+```
+
+#### Solution 2 (C++)
 
 - **Submitted:** 2026-11-19 08:09:05
 - **Status:** Correct
@@ -56,7 +86,7 @@ class Solution {
 };
 ```
 
-#### Solution 2 (C++)
+#### Solution 3 (C++)
 
 - **Submitted:** 2026-11-19 08:03:09
 - **Status:** Correct
@@ -94,4 +124,4 @@ class Solution {
 };
 ```
 
-*Generated on: 11/19/2026, 8:09:34 AM*
+*Generated on: 11/19/2026, 8:28:18 AM*
